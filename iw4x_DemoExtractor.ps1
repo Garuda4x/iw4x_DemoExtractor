@@ -51,8 +51,7 @@ ForEach($DemoDir in $DemoDirs){
     }
 }
 
-II $Moddir
-
+II $ModOutputDir
 
 
 
