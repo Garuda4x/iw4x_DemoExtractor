@@ -47,9 +47,11 @@ ForEach($DemoDir in $DemoDirs){
             DestinationPath = $finalOutput
         }    
         compress-archive @compressparam -Force
-        II $Moddir
+       
     }
 }
+
+II $Moddir
 
 
 
