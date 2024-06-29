@@ -6,6 +6,15 @@ $LGOutputDir = $OutputDir + "\LastGame"
 #get iw4x install directories
 $GameRootDir = (Get-ChildItem HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\* | % { Get-ItemProperty $_.PsPath } | Where-object {$_.DisplayName -like "Call of Duty: Modern Warfare 2 (2009) - Multiplayer"}).installlocation
 
+If(Test-Path $LGOutputDir){
+    Write-host "Found \LastGame Directory" -ForegroundColor Green
+}Else{
+    Write-host "Creating directory..." -ForegroundColor green
+    New-item -path $OutputDir -Name "LastGame" -ItemType Directory
+}
+    
+
+
 #get all demos
 $allDemos = GCI $GameRootDir -Recurse -Filter "*.dm_13.json"
 
